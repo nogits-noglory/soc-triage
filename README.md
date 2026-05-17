@@ -11,7 +11,7 @@ Generates synthetic security logs for SOC analyst training, anomaly detection en
 
 ## Why
 
-Real attack logs are either proprietary, legally sensitive, or stripped of the contextual signals that make them useful for training. This generates correlated, realistic log data on demand — including matched network logs for every host-based attack scenario.
+Real attack logs are either proprietary, legally sensitive, or stripped of the contextual signals that make them useful for training. This generates correlated, realistic log data on demand, including matched network logs for every host-based attack scenario.
 
 ## Setup
 
