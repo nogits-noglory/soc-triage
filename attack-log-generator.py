@@ -1,7 +1,15 @@
 import anthropic
+import json
 import os
 import sys
-from datetime import datetime
+from environment import (
+    get_or_create_environment,
+    generate_environment,
+    save_environment,
+    store_environment,
+    select_environment,
+    print_environment_summary
+)
 
 client = anthropic.Anthropic()
 
@@ -57,7 +65,7 @@ COMPANION_MAP = {
     }
 }
 
-def generate_log(os_type: str, attack_type: str, duration_minutes: int = 15) -> str:
+def generate_log(os_type: str, attack_type: str, duration_minutes: int = 15, env: dict = None) -> str:
     profiles = ATTACK_PROFILES.get(os_type)
     if not profiles:
         raise ValueError(f"Unknown log type: {os_type}. Choose from: {list(ATTACK_PROFILES.keys())}")
@@ -68,12 +76,39 @@ def generate_log(os_type: str, attack_type: str, duration_minutes: int = 15) -> 
 
     format_instruction = LOG_FORMAT_INSTRUCTIONS[os_type]
 
-    start_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    env_context = ""
+    if env:
+        env_context = f"""
+Use this specific network environment for all hostnames, IPs, usernames, and context:
+
+Organization: {env['org_name']} ({env['org_type']})
+Domain: {env['domain']}
+Business hours: {env['business_hours']['start']}-{env['business_hours']['end']}
+
+Subnets:
+{json.dumps(env['subnets'], indent=2)}
+
+Devices (use these exact hostnames and IPs):
+{json.dumps(env['devices'], indent=2)}
+
+Users (use these exact usernames):
+{json.dumps(env['users'], indent=2)}
+
+Known external IPs (these are legitimate, everything else external is suspicious):
+{json.dumps(env['known_external_ips'], indent=2)}
+
+Security policies:
+{json.dumps(env['policies'], indent=2)}
+
+Make the logs internally consistent with this environment.
+"""
+
     prompt = f"""You are simulating security log data. Generate {duration_minutes} minutes of realistic {os_type} log entries representing: {profile}
 
+{env_context}
 {format_instruction}
 
-Use realistic timestamps starting from {start_time}. Use realistic but fictional IPs, usernames, and hostnames. Output ONLY log lines, nothing else."""
+Use realistic timestamps starting from 2024-05-14 03:00:00. Output ONLY log lines, nothing else."""
 
     message = client.messages.create(
         model="claude-haiku-4-5",
@@ -91,44 +126,74 @@ def save_logs(os_type: str, attack_type: str, logs: str):
         f.write(logs)
     print(f"  Saved to {path}")
 
-def generate_with_companion(os_type: str, attack_type: str, duration_minutes: int):
-    """Generate a host log and its correlated network companion."""
+def generate_with_companion(os_type: str, attack_type: str, duration_minutes: int, env: dict = None):
     print(f"\nGenerating {os_type}/{attack_type} ({duration_minutes} minutes)...")
-    logs = generate_log(os_type, attack_type, duration_minutes)
+    logs = generate_log(os_type, attack_type, duration_minutes, env)
     save_logs(os_type, attack_type, logs)
 
-    # Generate correlated network log
     network_profile = COMPANION_MAP.get(os_type, {}).get(attack_type)
     if network_profile:
         print(f"Generating companion network/{network_profile}...")
-        network_logs = generate_log("network", network_profile, duration_minutes)
+        network_logs = generate_log("network", network_profile, duration_minutes, env)
         save_logs(f"network/{os_type}", attack_type, network_logs)
 
-def generate_all(duration_minutes: int):
-    """generate all profiles across all OS types with network companions."""
+def generate_all(duration_minutes: int, env: dict = None):
     for os_type in ["linux", "windows"]:
         for attack_type in ATTACK_PROFILES[os_type]:
-            generate_with_companion(os_type, attack_type, duration_minutes)
+            generate_with_companion(os_type, attack_type, duration_minutes, env)
 
-    # Generate standalone network-only profiles
     standalone_network = ["c2_callback", "dns_exfiltration"]
     for profile in standalone_network:
         print(f"\nGenerating network/{profile} ({duration_minutes} minutes)...")
-        logs = generate_log("network", profile, duration_minutes)
+        logs = generate_log("network", profile, duration_minutes, env)
         save_logs("network/standalone", profile, logs)
 
 if __name__ == "__main__":
+
+    # Handle environment flags before parsing other args
+    if "--new-env" in sys.argv:
+        sys.argv.remove("--new-env")
+        org_type = None
+        for arg in sys.argv:
+            if arg.startswith("--org="):
+                org_type = arg.split("=", 1)[1]
+                sys.argv.remove(arg)
+                break
+        print("Generating new environment...")
+        env = generate_environment(org_type)
+        save_environment(env)
+        store_environment(env)
+        print_environment_summary(env)
+
+    elif "--select-env" in sys.argv:
+        sys.argv.remove("--select-env")
+        env = select_environment()
+        if env:
+            print_environment_summary(env)
+        else:
+            sys.exit(1)
+
+    elif "--no-env" in sys.argv:
+        sys.argv.remove("--no-env")
+        env = None
+        print("Skipping environment context.")
+
+    else:
+        env = get_or_create_environment()
+        if env:
+            print_environment_summary(env)
+
+    # Generate logs
     if len(sys.argv) == 1:
-        # No args — generate everything
         duration = 15
         print(f"Generating full log corpus ({duration} minutes each)...")
-        generate_all(duration)
+        generate_all(duration, env)
         print("\nDone. Full corpus saved to sample_logs/")
 
     elif sys.argv[1] == "all":
         duration = int(sys.argv[2]) if len(sys.argv) > 2 else 15
         print(f"Generating full log corpus ({duration} minutes each)...")
-        generate_all(duration)
+        generate_all(duration, env)
         print("\nDone. Full corpus saved to sample_logs/")
 
     elif len(sys.argv) >= 3:
@@ -138,20 +203,26 @@ if __name__ == "__main__":
 
         if os_type == "network":
             print(f"\nGenerating network/{attack_type} ({duration} minutes)...")
-            logs = generate_log("network", attack_type, duration)
+            logs = generate_log("network", attack_type, duration, env)
             print(logs)
             save_logs("network/standalone", attack_type, logs)
         else:
-            logs_host = generate_log(os_type, attack_type, duration)
-            print(logs_host)
-            generate_with_companion(os_type, attack_type, duration)
+            generate_with_companion(os_type, attack_type, duration, env)
+
     else:
         print("Usage:")
-        print("  python attack-log-generator.py                          # generate full corpus")
-        print("  python attack-log-generator.py all [duration]           # generate full corpus with custom duration")
-        print("  python attack-log-generator.py <os> <attack> [duration] # generate specific profile + companion")
-        print("  python attack-log-generator.py network <attack> [duration] # generate network-only profile")
-        print("\nAvailable profiles:")
+        print("  python attack-log-generator.py                               # full corpus")
+        print("  python attack-log-generator.py all [duration]                # full corpus, custom duration")
+        print("  python attack-log-generator.py <os> <attack> [duration]      # single profile + companion")
+        print("  python attack-log-generator.py network <attack> [duration]   # network-only profile")
+        print()
+        print("Environment flags (prepend to any command):")
+        print("  --new-env               generate and use a fresh environment")
+        print("  --new-env --org=<type>  generate for a specific org type")
+        print("  --select-env            pick from saved environments")
+        print("  --no-env                skip environment context entirely")
+        print()
+        print("Available profiles:")
         for os_t, profiles in ATTACK_PROFILES.items():
             print(f"  {os_t}: {', '.join(profiles.keys())}")
         sys.exit(1)
